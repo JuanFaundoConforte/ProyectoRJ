@@ -32,8 +32,7 @@ function ItemCount({ stock, initial, onAdd }) {
   };
   return (
     <div>
-      <input
-        readonly
+      <input        
         className="form-control count"
         value={count}
         disabled
