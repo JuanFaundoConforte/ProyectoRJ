@@ -21,8 +21,8 @@ const ItemListContainer = () => {
 
   return (
     <div className="row row-cols-1 row-cols-md-3 g-4" >
-      {isLoading ? <div class="spinner-border m-5" role="status">
-  <span class="visually-hidden">Loading...</span>
+      {isLoading ? <div className="spinner-border m-5" role="status">
+  <span className="visually-hidden">Loading...</span>
 </div> : (
       producto.map((productos) => (
         <Item key={productos.id} producto={productos} />
