@@ -24,8 +24,8 @@ const ItemListContainer = () => {
       {isLoading ? <div className="spinner-border m-5" role="status">
   <span className="visually-hidden">Loading...</span>
 </div> : (
-      producto.map((productos) => (
-        <Item key={productos.id} producto={productos} />
+      producto.map((producto) => (
+        <Item key={producto.id} producto={producto} />
       )))}
     </div>
   );
