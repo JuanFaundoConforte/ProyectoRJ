@@ -1,6 +1,5 @@
 import "./App.css";
-import ItemCount from "./componentes/ItemCount/ItemCount";
-import ItemListContainer from "./componentes/Items/ItemListContainer";
+import ItemListContainer from "./componentes/ItemsLisConteiner/ItemListContainer";
 import Navbar from "./componentes/Navbar/Navbar";
 
 function App() {
@@ -8,22 +7,8 @@ function App() {
     <div className="App">
       <Navbar />
       <br />
-      <div className="card-group">
-        <ItemListContainer
-          name="Skis"
-          price="$28000"
-          description="Skis Carving marca K2"
-        />
-        <ItemListContainer
-          name="Botas Ski"
-          price="$13000"
-          description="Botas de ski Salomon Flexibles"
-        />
-        <ItemListContainer
-          name="Tabla Snowboard"
-          price="$17500"
-          description="Tabla Snowboard marca Burton"
-        />
+      <div className="card-group justify-content-center" >
+        <ItemListContainer />
       </div>
     </div>
   );
