@@ -1,8 +1,9 @@
 import React from "react";
-import ItemCount from "../ItemCount/ItemCount";
 import "./Items.css";
 
 const Item = ({ producto }) => {
+  
+
   return (
       <div className="col">
     <div className="card">
@@ -18,8 +19,10 @@ const Item = ({ producto }) => {
         <h5 className="card-title">{producto.name}</h5>
         <h6 className="card-subtitle mb-2 text-muted">$ {producto.price}</h6>
         <p className="card-text">{producto.description}</p>
-
-        <ItemCount stock={producto.stock} initial={0} />
+        <button className="btn btn-secondary" >
+        Ver Producto
+      </button>
+       
       </div>
     </div>
     </div>

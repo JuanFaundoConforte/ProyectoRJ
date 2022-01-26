@@ -1,19 +1,19 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Item from "../Items/Items";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
-const URL = "http://localhost:3001/productos";
-
-const ItemListContainer = () => {
+const ItemDetailConrainer = () => {
   const [producto, setProducto] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const URL = "http://localhost:3001/productos";
 
   useEffect(() => {
     setIsLoading(true);
     fetch(URL)
       .then((response) => response.json())
-      .then((json) => setProducto(json))
+      .then((data) => setProducto(data))
       .catch((err) => setError(err))
       .finally(() => setIsLoading(false));
   }, []);
@@ -24,12 +24,11 @@ const ItemListContainer = () => {
         <div className="spinner-border m-5" role="status"></div>
       ) : (
         producto.map((producto) => (
-          <Item key={producto.id} producto={producto} />
+          <ItemDetail key={producto.id} producto={producto} />
         ))
       )}
-      
     </div>
   );
 };
 
-export default ItemListContainer;
+export default ItemDetailConrainer;
