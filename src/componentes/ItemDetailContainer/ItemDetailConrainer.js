@@ -7,25 +7,26 @@ const ItemDetailConrainer = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const URL = "http://localhost:3001/productos";
+  const URL = "http://localhost:3001/productos/1";
 
   useEffect(() => {
     setIsLoading(true);
     fetch(URL)
       .then((response) => response.json())
-      .then((data) => setProducto(data))
+      .then((json) => setProducto(json))
       .catch((err) => setError(err))
       .finally(() => setIsLoading(false));
   }, []);
 
   return (
-    <div className="row row-cols-1 row-cols-md-3 g-4">
+    <div className="">
       {isLoading ? (
         <div className="spinner-border m-5" role="status"></div>
       ) : (
-        producto.map((producto) => (
+          <div>
+            <h3>Detalle de Producto: {producto.name}</h3>
           <ItemDetail key={producto.id} producto={producto} />
-        ))
+          </div>
       )}
     </div>
   );

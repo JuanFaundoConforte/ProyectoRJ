@@ -1,9 +1,10 @@
 import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
+import "./ItemDetail.css";
 
 const ItemDetail = ({ producto }) => {
   return (
-  
+    <div className="col">
       <div className="card">
         <div className="card-body">
           <div className="img-container">
@@ -22,7 +23,7 @@ const ItemDetail = ({ producto }) => {
           Cantidad Disponible: {producto.stock}
         </div>
       </div>
-    
+    </div>
   );
 };
 
