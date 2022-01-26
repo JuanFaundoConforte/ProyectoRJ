@@ -19,7 +19,7 @@ const ItemDetail = ({ producto }) => {
           <p className="card-text">{producto.description}</p>
           <ItemCount stock={producto.stock} initial={0} />
         </div>
-        <div class="card-footer text-muted">
+        <div className="card-footer text-muted">
           Cantidad Disponible: {producto.stock}
         </div>
       </div>

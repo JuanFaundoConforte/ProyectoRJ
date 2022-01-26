@@ -27,7 +27,6 @@ const ItemListContainer = () => {
           <Item key={producto.id} producto={producto} />
         ))
       )}
-      
     </div>
   );
 };

@@ -19,14 +19,14 @@ const ItemDetailConrainer = () => {
   }, []);
 
   return (
-    <div className="">
+    <div>
       {isLoading ? (
         <div className="spinner-border m-5" role="status"></div>
       ) : (
-          <div>
-            <h3>Detalle de Producto: {producto.name}</h3>
+        <div>
+          <h3>Detalle de Producto: {producto.name}</h3>
           <ItemDetail key={producto.id} producto={producto} />
-          </div>
+        </div>
       )}
     </div>
   );
