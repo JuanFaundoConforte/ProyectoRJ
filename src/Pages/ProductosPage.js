@@ -4,7 +4,6 @@ import ItemListContainer from "../componentes/ItemsLisConteiner/ItemListContaine
 const ProductosPage = () => {
   return (
     <div>
-      <h3 className="text-center">Productos</h3>
       <div className="card-group justify-content-center">
         <ItemListContainer />
       </div>
