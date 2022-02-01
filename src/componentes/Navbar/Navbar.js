@@ -1,12 +1,13 @@
 import CartWidget from "../iocons/CartWidget";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Mi Pagina
-        </a>
+        <Link className="navbar-brand" to="/">
+          SkiTotal
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -21,14 +22,14 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                INICIO
-              </a>
+              <Link className="nav-link active" to={`/category/1`}>
+                Ski
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#">
-                OFERTAS
-              </a>
+              <Link className="nav-link active" to="category/2">
+                Snowboard
+              </Link>
             </li>
             <li className="nav-item dropdown">
               <a
@@ -53,6 +54,7 @@ function Navbar() {
             Registrarse
           </button>
         </div>
+
         <CartWidget />
       </div>
     </nav>

@@ -2,22 +2,31 @@ import React from "react";
 import ItemCountResta from "../iocons/ItemCountResta";
 import ItemCountSuma from "../iocons/ItemCountSuma";
 import "./ItemCount.css";
+import swal from "sweetalert";
 
 function ItemCount({ stock, initial, onAdd }) {
   const [count, setCount] = React.useState(initial);
 
   const agregar = () => {
     if (count === 0) {
-      alert("Debe Seleccionar la cantidad");
+      swal(
+        "SELECCIONE CANTIDAD",
+        "Debe seleccionar al menos uno para continuar",
+        "warning"
+      );
     } else {
-      alert("Se agrego producto al carrito");
+      swal(
+        "AGREGADO AL CARRITO!",
+        "El producto se agrego con exito!",
+        "success"
+      );
     }
   };
 
   const sumar = () => {
     if (count === stock) {
       setCount(stock);
-      alert("Se alcanzo la Cantidad Maxima Disponible");
+      swal("Se alcanzo la Cantidad Maxima Disponible");
     } else {
       setCount(count + 1);
     }
@@ -32,11 +41,7 @@ function ItemCount({ stock, initial, onAdd }) {
   };
   return (
     <div>
-      <input        
-        className="form-control count"
-        value={count}
-        disabled
-      ></input>
+      <input className="form-control count" value={count} disabled></input>
       <button className="btn" onClick={restar}>
         <ItemCountResta />
       </button>

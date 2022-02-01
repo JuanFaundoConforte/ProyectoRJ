@@ -1,21 +1,32 @@
 import "./App.css";
-import ItemDetailConrainer from "./componentes/ItemDetailContainer/ItemDetailConrainer";
-import ItemListContainer from "./componentes/ItemsLisConteiner/ItemListContainer";
 import Navbar from "./componentes/Navbar/Navbar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ProductosPage from "./Pages/ProductosPage";
+import ProductDetailPage from "./Pages/ProductDetailPage";
+import CartPage from "./Pages/CartPage";
+import CategoryPage from "./Pages/CategoryPage";
+import NotFoundPage from "./Pages/NotFoundPage";
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <Navbar />
-      <br />
-      <div className=" card-group justify-content-center">
-        <ItemListContainer />
-      </div>
-      <hr></hr>
-      <div className="card-group justify-content-center">
-        <ItemDetailConrainer />
-      </div>
-    </div>
+      <br></br>
+      <Routes>
+        <Route path="/">
+          <Route index element={<ProductosPage />} />
+        </Route>
+        <Route path="item">
+          <Route index element={<ProductosPage />} />
+          <Route path=":productId" element={<ProductDetailPage />} />
+        </Route>
+        <Route path="category">
+          <Route path=":categoryId" element={<CategoryPage />} />
+        </Route>
+        <Route path="cart" element={<CartPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
