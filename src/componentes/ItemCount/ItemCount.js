@@ -1,47 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import ItemCountResta from "../iocons/ItemCountResta";
 import ItemCountSuma from "../iocons/ItemCountSuma";
 import "./ItemCount.css";
-import swal from "sweetalert";
 
-function ItemCount({ stock, initial, onAdd }) {
-  const [count, setCount] = React.useState(initial);
 
-  const agregar = () => {
-    if (count === 0) {
-      swal(
-        "SELECCIONE CANTIDAD",
-        "Debe seleccionar al menos uno para continuar",
-        "warning"
-      );
-    } else {
-      swal(
-        "AGREGADO AL CARRITO!",
-        "El producto se agrego con exito!",
-        "success"
-      );
-    }
-  };
-
-  const sumar = () => {
-    if (count === stock) {
-      setCount(stock);
-      swal("Se alcanzo la Cantidad Maxima Disponible");
-    } else {
-      setCount(count + 1);
-    }
-  };
-
-  const restar = () => {
-    if (count === initial) {
-      setCount(initial);
-    } else {
-      setCount(count - 1);
-    }
-  };
+function ItemCount({ sumar, restar, onAdd, cantidad }) {
+  const navigate = useNavigate();  
+ 
+  
   return (
-    <div>
-      <input className="form-control count" value={count} disabled></input>
+    <div>    
+      <input className="form-control count" value={cantidad} disabled></input>
       <button className="btn" onClick={restar}>
         <ItemCountResta />
       </button>
@@ -49,11 +19,18 @@ function ItemCount({ stock, initial, onAdd }) {
         <ItemCountSuma />
       </button>
       <br></br>
-      <button className="btn btn-secondary" onClick={agregar}>
+      <div className="d-grid gap-2  mx-auto">
+      <button className="btn btn-secondary" id="botonAgregar" onClick={onAdd}>
         Agregar al Carrito
       </button>
-    </div>
+      <button className="btn btn-secondary" onClick={() => navigate(`/cart`)}>
+      Ir al Carrito
+    </button>
+      
+      </div>
+      </div>
   );
+ 
 }
 
 export default ItemCount;
