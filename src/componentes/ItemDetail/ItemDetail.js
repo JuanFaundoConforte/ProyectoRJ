@@ -4,7 +4,7 @@ import "./ItemDetail.css";
 import swal from "sweetalert";
 const ItemDetail = ({ producto }) => {
   const [cantidad, setCantidad] = React.useState(0);
-  
+
   const agregar = () => {
     if (cantidad === 0) {
       swal(
@@ -18,7 +18,6 @@ const ItemDetail = ({ producto }) => {
         "El producto se agrego con exito!",
         "success"
       );
-      
     }
   };
   const sumar = () => {
@@ -57,7 +56,6 @@ const ItemDetail = ({ producto }) => {
             restar={restar}
             onAdd={agregar}
             cantidad={cantidad}
-            
           />
         </div>
         <div className="card-footer text-muted">

@@ -4,13 +4,11 @@ import ItemCountResta from "../iocons/ItemCountResta";
 import ItemCountSuma from "../iocons/ItemCountSuma";
 import "./ItemCount.css";
 
-
 function ItemCount({ sumar, restar, onAdd, cantidad }) {
-  const navigate = useNavigate();  
- 
-  
+  const navigate = useNavigate();
+
   return (
-    <div>    
+    <div>
       <input className="form-control count" value={cantidad} disabled></input>
       <button className="btn" onClick={restar}>
         <ItemCountResta />
@@ -20,17 +18,15 @@ function ItemCount({ sumar, restar, onAdd, cantidad }) {
       </button>
       <br></br>
       <div className="d-grid gap-2  mx-auto">
-      <button className="btn btn-secondary" id="botonAgregar" onClick={onAdd}>
-        Agregar al Carrito
-      </button>
-      <button className="btn btn-secondary" onClick={() => navigate(`/cart`)}>
-      Ir al Carrito
-    </button>
-      
+        <button className="btn btn-secondary" onClick={onAdd}>
+          Agregar al Carrito
+        </button>
+        <button className="btn btn-secondary" onClick={() => navigate(`/cart`)}>
+          Ir al Carrito
+        </button>
       </div>
-      </div>
+    </div>
   );
- 
 }
 
 export default ItemCount;
