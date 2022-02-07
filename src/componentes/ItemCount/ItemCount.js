@@ -16,9 +16,8 @@ function ItemCount({ sumar, restar, onAdd, cantidad }) {
       </button>
       <br></br>
       <button className="btn btn-secondary" onClick={onAdd}>
-          Agregar al Carrito
-        </button>
-      
+        Agregar al Carrito
+      </button>
     </div>
   );
 }

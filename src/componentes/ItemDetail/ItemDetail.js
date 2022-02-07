@@ -8,7 +8,7 @@ import { useCart } from "../../context/CartContext";
 const ItemDetail = ({ producto }) => {
   const [cantidad, setCantidad] = React.useState(0);
   const navigate = useNavigate();
-  const {addItem} = useCart();
+  const { addItem } = useCart();
 
   const agregar = () => {
     if (cantidad === 0) {
