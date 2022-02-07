@@ -6,27 +6,30 @@ import ProductDetailPage from "./Pages/ProductDetailPage";
 import CartPage from "./Pages/CartPage";
 import CategoryPage from "./Pages/CategoryPage";
 import NotFoundPage from "./Pages/NotFoundPage";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <br></br>
-      <Routes>
-        <Route path="/">
-          <Route index element={<ProductosPage />} />
-        </Route>
-        <Route path="item">
-          <Route index element={<ProductosPage />} />
-          <Route path=":productId" element={<ProductDetailPage />} />
-        </Route>
-        <Route path="category">
-          <Route path=":categoryId" element={<CategoryPage />} />
-        </Route>
-        <Route path="cart" element={<CartPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <Navbar />
+        <br></br>
+        <Routes>
+          <Route path="/">
+            <Route index element={<ProductosPage />} />
+          </Route>
+          <Route path="item">
+            <Route index element={<ProductosPage />} />
+            <Route path=":productId" element={<ProductDetailPage />} />
+          </Route>
+          <Route path="category">
+            <Route path=":categoryId" element={<CategoryPage />} />
+          </Route>
+          <Route path="cart" element={<CartPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

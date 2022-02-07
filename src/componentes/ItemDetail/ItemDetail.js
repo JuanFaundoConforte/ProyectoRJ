@@ -2,8 +2,13 @@ import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 import swal from "sweetalert";
+import { useNavigate } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
+
 const ItemDetail = ({ producto }) => {
   const [cantidad, setCantidad] = React.useState(0);
+  const navigate = useNavigate();
+  const {addItem} = useCart();
 
   const agregar = () => {
     if (cantidad === 0) {
@@ -13,11 +18,20 @@ const ItemDetail = ({ producto }) => {
         "warning"
       );
     } else {
-      swal(
-        "AGREGADO AL CARRITO!",
-        "El producto se agrego con exito!",
-        "success"
-      );
+      addItem(producto, cantidad);
+      swal({
+        title: "AGREGAO AL CARRITO",
+        text: "Se agrego exitosamente el producto",
+        icon: "success",
+        buttons: ["Seguir Comprando", "Ir al Carrito"],
+        dangerMode: false,
+      }).then((sigueCompra) => {
+        if (sigueCompra) {
+          navigate(`/cart`);
+        } else {
+          navigate(`/`);
+        }
+      });
     }
   };
   const sumar = () => {
@@ -58,6 +72,7 @@ const ItemDetail = ({ producto }) => {
             cantidad={cantidad}
           />
         </div>
+        <div className="d-grid gap-2  mx-auto"></div>
         <div className="card-footer text-muted">
           Cantidad Disponible: {producto.stock}
         </div>
