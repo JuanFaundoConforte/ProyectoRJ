@@ -20,7 +20,7 @@ const ItemDetail = ({ producto }) => {
     } else {
       addItem(producto, cantidad);
       swal({
-        title: "AGREGAO AL CARRITO",
+        title: "AGREGADO AL CARRITO",
         text: "Se agrego exitosamente el producto",
         icon: "success",
         buttons: ["Seguir Comprando", "Ir al Carrito"],
