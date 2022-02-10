@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
+import { getFirestore } from "../../Firebase/firebase";
 
 const ItemDetailConrainer = () => {
   const [producto, setProducto] = useState([]);
@@ -10,11 +11,17 @@ const ItemDetailConrainer = () => {
   const { productId } = useParams();
 
   useEffect(() => {
-    const URL = `http://localhost:3001/productos/${productId}`;
+    const db = getFirestore();
+    const itemCollection = db.collection("productos");
+    const selectedItem = itemCollection.doc(productId);
+
     setIsLoading(true);
-    fetch(URL)
-      .then((response) => response.json())
-      .then((json) => setProducto(json))
+    selectedItem
+      .get()
+      .then((response) => {
+        if (!response.exists) console.log("no hay producto");
+        setProducto({ ...response.data(), id: response.id });
+      })
       .catch((err) => setError(err))
       .finally(() => setIsLoading(false));
   }, [productId]);

@@ -7,6 +7,7 @@ export const CartProvider = ({ children }) => {
 
   const addItem = (item, quantity) => {
     const newItem = { item, quantity };
+    
     setCart((prevState) => [...prevState, newItem]);
   };
 
@@ -18,8 +19,16 @@ export const CartProvider = ({ children }) => {
     setCart([]);
   };
 
+  const subTotal = (price, quantity) => {
+    return quantity * price;
+  };
+
+  
+
   return (
-    <CartContext.Provider value={{ cart, addItem, removeItem, clear }}>
+    <CartContext.Provider
+      value={{ cart, addItem, removeItem, clear, subTotal }}
+    >
       {children}
     </CartContext.Provider>
   );

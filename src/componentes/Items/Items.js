@@ -5,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 const Item = ({ producto }) => {
   const navigate = useNavigate();
   return (
-    <div className="col justify-content-center">
-      <div className="card">
-        <div className="card-body">
+    <div className="card-group justify-content-center">
+      <div className="">
+        <div className="card card-body">
           <div className="img-container">
             <img
               className="card-img-top"
