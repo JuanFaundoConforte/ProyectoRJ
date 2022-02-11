@@ -6,6 +6,7 @@ import ProductDetailPage from "./Pages/ProductDetailPage";
 import CartPage from "./Pages/CartPage";
 import NotFoundPage from "./Pages/NotFoundPage";
 import { CartProvider } from "./context/CartContext";
+import CheckOutPage from "./Pages/CheckOutPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path=":categoryId" element={<ProductosPage />} />
           </Route>
           <Route path="cart" element={<CartPage />} />
+          <Route path="checkOut/:orderId" element={<CheckOutPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
