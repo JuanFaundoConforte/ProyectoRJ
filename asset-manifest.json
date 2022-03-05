@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/conforte-proyecto/static/css/main.c6155dea.css",
+    "main.js": "/conforte-proyecto/static/js/main.68840096.js",
+    "static/js/787.d5cf9824.chunk.js": "/conforte-proyecto/static/js/787.d5cf9824.chunk.js",
+    "index.html": "/conforte-proyecto/index.html",
+    "main.c6155dea.css.map": "/conforte-proyecto/static/css/main.c6155dea.css.map",
+    "main.68840096.js.map": "/conforte-proyecto/static/js/main.68840096.js.map",
+    "787.d5cf9824.chunk.js.map": "/conforte-proyecto/static/js/787.d5cf9824.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c6155dea.css",
+    "static/js/main.68840096.js"
+  ]
+}
