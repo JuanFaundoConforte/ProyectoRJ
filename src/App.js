@@ -15,7 +15,7 @@ function App() {
         <Navbar />
         <br></br>
         <Routes>
-          <Route path="/">
+          <Route path="/ProyectoRJ">
             <Route index element={<ProductosPage />} />
           </Route>
           <Route path="item">
