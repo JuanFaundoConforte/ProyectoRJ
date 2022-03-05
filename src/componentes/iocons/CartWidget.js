@@ -1,14 +1,15 @@
 import React from "react";
 import { RiShoppingCartLine } from "react-icons/ri";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
 import "./CartWidget.css";
 
-const CartWidget = (cantidad) => {
-  const navigate = useNavigate();
+const CartWidget = () => {
+  const { cartQuantity } = useCart();
   return (
-    <button className="btn carrito" onClick={() => navigate(`/cart`)}>
-      <RiShoppingCartLine className="carticon" />
-    </button>
+    <Link to= "/cart" className="nav-link active carrito">
+      <RiShoppingCartLine className="carticon" /> ({cartQuantity})
+    </Link>
   );
 };
 

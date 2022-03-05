@@ -85,9 +85,9 @@ const CartPage = () => {
             </button>
           </div>
           <br></br>
-          <hr></hr>
-          <h3>Complete el formulario para continuar con la compra</h3>
+          <hr></hr>         
           <div className="container">
+          <h3>Complete el formulario para continuar con la compra</h3>
             <form onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-group col-md-6">

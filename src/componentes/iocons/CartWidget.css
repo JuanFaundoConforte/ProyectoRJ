@@ -8,3 +8,8 @@
 .carrito{
     color: aliceblue;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+  }

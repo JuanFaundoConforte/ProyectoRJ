@@ -27,7 +27,8 @@ const CheckOutPage = () => {
           <h3>GRACIAS POR TU COMPRA </h3>
           <h4>Tu Numero de compra es:</h4>
           <p>{order.id}</p>
-          <h2>Total de la compra: $ {order.total}</h2>
+          <h2>Total de la compra: $ {order.total}</h2>        
+          
           <Link className="nav-link" to="/">
             Volver al Inicio
           </Link>
